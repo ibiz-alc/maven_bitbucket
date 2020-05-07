@@ -105,6 +105,10 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 
+task publishLocal() {
+    dependsOn clean, build, publishToMavenLocal
+}
+
 publishing {
     publications {
         myPublication(MavenPublication) {
